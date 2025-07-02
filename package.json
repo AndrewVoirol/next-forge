@@ -4,9 +4,7 @@
   "bin": {
     "next-forge": "dist/index.js"
   },
-  "files": [
-    "dist/index.js"
-  ],
+  "files": ["dist/index.js"],
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -18,7 +16,6 @@
     "boundaries": "turbo boundaries",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/design-system",
-    "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
     "clean": "git clean -xdf node_modules"
   },
   "devDependencies": {
@@ -36,7 +33,7 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.12.4",
   "dependencies": {
     "@clack/prompts": "^0.11.0",
     "commander": "^14.0.0"

@@ -1,7 +1,4 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
-
-// @ts-expect-error No declaration file
-import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin';
 import type { NextConfig } from 'next';
 
 const otelRegex = /@opentelemetry\/instrumentation/;
@@ -35,16 +32,13 @@ export const config: NextConfig = {
     ];
   },
 
-  webpack(config, { isServer }) {
-    if (isServer) {
-      config.plugins = config.plugins || [];
-      config.plugins.push(new PrismaPlugin());
-    }
-
-    config.ignoreWarnings = [{ module: otelRegex }];
-
-    return config;
-  },
+  // Only apply webpack config when not using Turbopack
+  ...(process.env.TURBOPACK !== '1' && {
+    webpack(config, { isServer }) {
+      config.ignoreWarnings = [{ module: otelRegex }];
+      return config;
+    },
+  }),
 
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,

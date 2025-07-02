@@ -13,7 +13,8 @@ type AppLayoutProperties = {
 };
 
 const AppLayout = async ({ children }: AppLayoutProperties) => {
-  if (env.ARCJET_KEY) {
+  // Only apply strict security in production
+  if (env.ARCJET_KEY && process.env.NODE_ENV === 'production') {
     await secure(['CATEGORY:PREVIEW']);
   }
 
