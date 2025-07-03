@@ -1,11 +1,20 @@
 'use client';
 
-import type { projects } from '@repo/database/schema';
 import { useMemo, useState } from 'react';
 import { ProjectCard } from './project-card';
 import { ProjectModal } from './project-modal';
 
-type Project = typeof projects.$inferSelect;
+// Define a simple project type
+interface Project {
+  id: number;
+  title: string;
+  description?: string;
+  tags?: string[];
+  mediaUrls?: string[];
+  isPublic: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 interface PortfolioGridProps {
   projects: Project[];
