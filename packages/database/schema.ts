@@ -15,7 +15,7 @@ export const page = pgTable('Page', {
 
 export const projects = pgTable('projects', {
   id: serial().primaryKey().notNull(),
-  title: varchar(255).notNull(),
+  title: varchar('255').notNull(),
   description: text(),
   tags: text().array(),
   mediaUrls: text().array(),

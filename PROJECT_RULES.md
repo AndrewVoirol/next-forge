@@ -37,6 +37,15 @@
 
 **Rule**: Always test authentication flow end-to-end before proceeding
 
+### Next.js Image Component
+**Issue**: External image domains not configured, causing 500 errors  
+**Solution**: 
+- Add external domains to `next.config.ts` remotePatterns
+- Configure each domain with protocol and hostname
+- Restart dev server after config changes
+
+**Rule**: Always configure external image domains in Next.js config before using Next/Image
+
 ---
 
 ## 🛠️ Development Workflow Rules
@@ -125,6 +134,14 @@
 2. Check import paths and dependencies
 3. Verify all required files exist
 4. Clear cache and rebuild if needed
+
+### Image Loading Errors
+**Problem**: Next.js Image component fails to load external images  
+**Solution**:
+1. Add domain to `packages/next-config/index.ts` remotePatterns
+2. Include protocol and hostname
+3. Restart development server
+4. Test with actual image URLs
 
 ---
 
