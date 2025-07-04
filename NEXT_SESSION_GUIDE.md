@@ -23,7 +23,7 @@
 ## 🌐 Production URLs
 
 ### Portfolio Access
-- **Production**: https://next-forge-phi.vercel.app/portfolio
+- **Production**: https://next-forge-3hm7u4dx6-andrew-voirols-projects.vercel.app/portfolio
 - **Local**: http://localhost:3000/portfolio
 
 ### Authentication Required
@@ -111,7 +111,7 @@ pnpm build --filter=app
 
 # Access portfolio
 # Local: http://localhost:3000/portfolio
-# Production: https://next-forge-phi.vercel.app/portfolio
+# Production: https://next-forge-3hm7u4dx6-andrew-voirols-projects.vercel.app/portfolio
 ```
 
 ## 📊 Current Portfolio Features
@@ -186,7 +186,7 @@ The portfolio uses the shared design system with shadcn/ui components:
 
 ### Important URLs
 - **Local Portfolio**: http://localhost:3000/portfolio
-- **Production Portfolio**: https://next-forge-phi.vercel.app/portfolio
+- **Production Portfolio**: https://next-forge-3hm7u4dx6-andrew-voirols-projects.vercel.app/portfolio
 - **Clerk Dashboard**: https://dashboard.clerk.com/
 - **Vercel Dashboard**: https://vercel.com/dashboard
 - **Neon Database**: https://console.neon.tech/
@@ -209,4 +209,4 @@ pnpm db:seed              # Seed database with sample data
 **Status**: 🎉 **PRODUCTION READY** - All systems functional
 **Next Priority**: Content customization and real portfolio data
 **Confidence Level**: High - Ready for immediate use
-**Production URL**: https://next-forge-phi.vercel.app/portfolio 
+**Production URL**: https://next-forge-3hm7u4dx6-andrew-voirols-projects.vercel.app/portfolio 

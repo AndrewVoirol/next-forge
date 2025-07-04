@@ -238,7 +238,7 @@ CREATE TABLE projects (
 ## 🌐 Production URLs
 
 ### Portfolio Access
-- **Production**: https://next-forge-phi.vercel.app/portfolio
+- **Production**: https://next-forge-3hm7u4dx6-andrew-voirols-projects.vercel.app/portfolio
 - **Local**: http://localhost:3000/portfolio
 
 ### Authentication Required
