@@ -4,24 +4,7 @@ import { Badge } from '@repo/design-system/components/ui/badge';
 import { Card, CardContent } from '@repo/design-system/components/ui/card';
 import { ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
-
-// Define a simple project type
-interface Project {
-  id: number;
-  title: string;
-  description?: string;
-  tags?: string[];
-  mediaUrls?: string[];
-  isPublic: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface ProjectCardProps {
-  project: Project;
-  viewMode?: 'grid' | 'list';
-  onClick?: () => void;
-}
+import type { ProjectCardProps } from '../types';
 
 export function ProjectCard({
   project,

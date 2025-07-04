@@ -1,25 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import type { PortfolioGridProps, Project } from '../types';
 import { ProjectCard } from './project-card';
 import { ProjectModal } from './project-modal';
-
-// Define a simple project type
-interface Project {
-  id: number;
-  title: string;
-  description?: string;
-  tags?: string[];
-  mediaUrls?: string[];
-  isPublic: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface PortfolioGridProps {
-  projects: Project[];
-  viewMode?: 'grid' | 'list';
-}
 
 export function PortfolioGrid({
   projects,

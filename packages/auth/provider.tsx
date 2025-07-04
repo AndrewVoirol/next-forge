@@ -53,6 +53,12 @@ export const AuthProvider = ({
     <ClerkProvider
       {...properties}
       appearance={{ layout, baseTheme, elements, variables }}
+      signInFallbackRedirectUrl={
+        process.env.NEXT_PUBLIC_CLERK_FALLBACK_REDIRECT_URL
+      }
+      signUpFallbackRedirectUrl={
+        process.env.NEXT_PUBLIC_CLERK_FALLBACK_REDIRECT_URL
+      }
     />
   );
 };

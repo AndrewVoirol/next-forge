@@ -5,13 +5,7 @@ import { Button } from '@repo/design-system/components/ui/button';
 import { Input } from '@repo/design-system/components/ui/input';
 import { Filter, Grid3X3, List, Search } from 'lucide-react';
 import { useState } from 'react';
-
-interface PortfolioHeaderProps {
-  onSearchChange?: (search: string) => void;
-  onFilterChange?: (filter: string) => void;
-  onViewChange?: (view: 'grid' | 'list') => void;
-  availableTags?: string[];
-}
+import type { PortfolioHeaderProps } from '../types';
 
 export function PortfolioHeader({
   onSearchChange,

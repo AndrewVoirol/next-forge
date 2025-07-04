@@ -3,6 +3,44 @@
 ## Overview
 This checklist covers all required environment variables for the Next.js Forge monorepo. Each app (app, web, api) needs its own `.env.local` file with the appropriate variables.
 
+## 🚨 CRITICAL: Vercel Deployment Issues
+
+### Current Problem
+The `apps/app` deployment is failing on Vercel due to missing Clerk environment variables. The build error shows:
+```
+❌ Invalid environment variables: [
+  {
+    code: 'invalid_type',
+    expected: 'string',
+    received: 'undefined',
+    path: [ 'NEXT_PUBLIC_CLERK_SIGN_UP_URL' ],
+    message: 'Required'
+  },
+  {
+    code: 'invalid_type',
+    expected: 'string',
+    received: 'undefined',
+    path: [ 'NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL' ],
+    message: 'Required'
+  },
+  {
+    code: 'invalid_type',
+    expected: 'string',
+    received: 'undefined',
+    path: [ 'NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL' ],
+    message: 'Required'
+  }
+]
+```
+
+### Required Fix
+Add these environment variables to your Vercel project settings:
+1. Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+2. Add the missing variables:
+   - `NEXT_PUBLIC_CLERK_SIGN_UP_URL` = `/sign-up`
+   - `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL` = `/`
+   - `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` = `/`
+
 ## Required Environment Variables
 
 ### 🔐 Authentication (Clerk)
@@ -16,6 +54,8 @@ CLERK_WEBHOOK_SECRET="whsec_..."                  # Optional - For webhooks
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_test_..."   # Required - Get from Clerk Dashboard
 NEXT_PUBLIC_CLERK_SIGN_IN_URL="/sign-in"          # Required - URL path
 NEXT_PUBLIC_CLERK_SIGN_UP_URL="/sign-up"          # Required - URL path
+NEXT_PUBLIC_CLERK_FALLBACK_REDIRECT_URL="/"       # Required - Redirect after sign-in/sign-up
+NEXT_PUBLIC_CLERK_FORCE_REDIRECT_URL="/"          # Optional - Force redirect URL
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL="/"           # Required - Redirect after sign-in
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL="/"           # Required - Redirect after sign-up
 ```

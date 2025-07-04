@@ -2,18 +2,7 @@ import { auth } from '@repo/auth/server';
 import { notFound } from 'next/navigation';
 import { PortfolioGrid } from './components/portfolio-grid';
 import { PortfolioHeader } from './components/portfolio-header';
-
-// Define a simple project type
-interface Project {
-  id: number;
-  title: string;
-  description?: string;
-  tags?: string[];
-  mediaUrls?: string[];
-  isPublic: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import type { Project } from './types';
 
 // Static sample data for development
 const sampleProjects: Project[] = [

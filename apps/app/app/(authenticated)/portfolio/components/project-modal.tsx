@@ -10,23 +10,7 @@ import {
 } from '@repo/design-system/components/ui/dialog';
 import { ExternalLink, Github, X } from 'lucide-react';
 import Image from 'next/image';
-
-// Define a simple project type
-interface Project {
-  id: number;
-  title: string;
-  description?: string;
-  tags?: string[];
-  mediaUrls?: string[];
-  isPublic: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface ProjectModalProps {
-  project: Project;
-  onClose: () => void;
-}
+import type { ProjectModalProps } from '../types';
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const mainImage = project.mediaUrls?.[0];
