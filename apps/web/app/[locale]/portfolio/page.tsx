@@ -1,6 +1,6 @@
 import { auth } from '@repo/auth/server';
 import { notFound } from 'next/navigation';
-import { PortfolioContainer } from './components/portfolio-container';
+import { PortfolioContainer } from './components';
 import type { Project } from './types';
 
 // Static sample data for development

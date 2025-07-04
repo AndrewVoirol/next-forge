@@ -16,7 +16,10 @@ const I18nMiddleware = createI18nMiddleware({
     const acceptedLanguages = negotiator.languages();
 
     const matchedLocale = matchLocale(acceptedLanguages, locales, 'en');
-
+    // Safe fallback: if matchedLocale is not supported, use 'en'
+    if (!locales.includes(matchedLocale)) {
+      return 'en';
+    }
     return matchedLocale;
   },
 });

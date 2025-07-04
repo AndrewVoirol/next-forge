@@ -2,8 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import type { PortfolioGridProps, Project } from '../types';
-import { ProjectCard } from './project-card';
-import { ProjectModal } from './project-modal';
+import { ProjectCard, ProjectModal } from './index';
 
 export function PortfolioGrid({
   projects,

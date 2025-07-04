@@ -22,14 +22,20 @@ import Logo from './logo.svg';
 
 type HeaderProps = {
   dictionary: Dictionary;
+  locale: string;
 };
 
-export const Header = ({ dictionary }: HeaderProps) => {
+export const Header = ({ dictionary, locale }: HeaderProps) => {
   const navigationItems = [
     {
       title: dictionary.web.header.home,
-      href: '/',
+      href: `/${locale}`,
       description: '',
+    },
+    {
+      title: 'Portfolio',
+      href: `/${locale}/portfolio`,
+      description: 'Showcase of projects and work',
     },
     {
       title: dictionary.web.header.product.title,
@@ -37,13 +43,13 @@ export const Header = ({ dictionary }: HeaderProps) => {
       items: [
         {
           title: dictionary.web.header.product.pricing,
-          href: '/pricing',
+          href: `/${locale}/pricing`,
         },
       ],
     },
     {
       title: dictionary.web.header.blog,
-      href: '/blog',
+      href: `/${locale}/blog`,
       description: '',
     },
   ];
