@@ -13,6 +13,8 @@ export interface Project {
 export interface PortfolioGridProps {
   projects: Project[];
   viewMode?: 'grid' | 'list';
+  searchTerm?: string;
+  selectedFilter?: string;
 }
 
 export interface ProjectCardProps {

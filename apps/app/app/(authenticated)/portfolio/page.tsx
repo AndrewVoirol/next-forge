@@ -1,7 +1,6 @@
 import { auth } from '@repo/auth/server';
 import { notFound } from 'next/navigation';
-import { PortfolioGrid } from './components/portfolio-grid';
-import { PortfolioHeader } from './components/portfolio-header';
+import { PortfolioContainer } from './components/portfolio-container';
 import type { Project } from './types';
 
 // Static sample data for development
@@ -125,8 +124,7 @@ export default async function PortfolioPage() {
 
     return (
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <PortfolioHeader />
-        <PortfolioGrid projects={portfolioProjects} />
+        <PortfolioContainer projects={portfolioProjects} />
       </div>
     );
   } catch (error) {
@@ -135,8 +133,7 @@ export default async function PortfolioPage() {
     // Fallback to static data if auth fails
     return (
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <PortfolioHeader />
-        <PortfolioGrid projects={sampleProjects} />
+        <PortfolioContainer projects={sampleProjects} />
       </div>
     );
   }

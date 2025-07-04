@@ -8,10 +8,10 @@ import { ProjectModal } from './project-modal';
 export function PortfolioGrid({
   projects,
   viewMode = 'grid',
+  searchTerm = '',
+  selectedFilter = '',
 }: PortfolioGridProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedFilter, setSelectedFilter] = useState('');
 
   // Filter projects based on search and filter
   const filteredProjects = useMemo(() => {
