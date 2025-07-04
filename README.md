@@ -29,3 +29,5 @@ Then read the [docs](https://www.next-forge.com/docs) for more information.
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
+
+// Deployment trigger: All linter/type errors fixed, Clerk keys ready for production. [Automated commit]
