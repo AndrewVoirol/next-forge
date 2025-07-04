@@ -28,17 +28,6 @@ export function PortfolioGrid({
     });
   }, [projects, searchTerm, selectedFilter]);
 
-  // Get unique tags for filtering
-  const availableTags = useMemo(() => {
-    const tags = new Set<string>();
-    for (const project of projects) {
-      for (const tag of project.tags || []) {
-        tags.add(tag);
-      }
-    }
-    return Array.from(tags);
-  }, [projects]);
-
   if (viewMode === 'list') {
     return (
       <div className="space-y-4">
